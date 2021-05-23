@@ -12,10 +12,3 @@
 // Каждый следующий div после первого, должен быть шире и выше предыдущего на 10px
 // Создай функцию destroyBoxes(), которая очищает div#boxes.
 
-function createBoxes(amount) {
-    
-}
-
-function destroyBoxes() {
-    
-}

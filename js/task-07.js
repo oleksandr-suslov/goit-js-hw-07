@@ -3,7 +3,7 @@
 // перетаскивании ползунка будет меняться размер текста.
 
 let size = document.getElementById('font-size-control');
-
+size.value = 16;
 function sizeText(elt) {
     const text = document.getElementById('text');
     text.style.fontSize = elt.currentTarget.value + "px";

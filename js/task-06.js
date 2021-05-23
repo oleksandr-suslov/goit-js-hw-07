@@ -12,17 +12,17 @@
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
 const input = document.querySelector('#validation-input');
+input.addEventListener('blur', changeCountSimbol)
 
-
-function changeCountSimbol(event) {
-  if (event.currentTarget.value.length == 6) {
-    input.classList.add('valid');
-    input.classList.remove('invalid')
-  }
-  else {
-    input.classList.add('invalid');
-    input.classList.remove('valid')
-  }
+const toggleClass=(prev,next,node)=>{
+    node.classList.remove(prev);
+    node.classList.add(next);
 }
 
-input.addEventListener('blur', changeCountSimbol)
+function changeCountSimbol(event){
+    const inputLength=event.currentTarget.value.length;
+    const dataLength=event.currentTarget.attributes["data-length"].nodeValue;
+    inputLength === Number(dataLength)?
+        toggleClass('invalid','valid',input) :
+        toggleClass('valid','invalid',input)
+}
